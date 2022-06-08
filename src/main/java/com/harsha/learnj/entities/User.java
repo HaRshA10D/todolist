@@ -10,20 +10,22 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
-public class User {
+@Table(name = "users")
+public class User extends BaseEntity {
 
     @Id
     @JsonIgnore
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
 
     @NotNull
     String name;
 
     @NotNull
+    @Column(name = "org_id")
     String orgID;
 
     @NotNull
+    @Column(name = "nick_name")
     String nickName;
 }
